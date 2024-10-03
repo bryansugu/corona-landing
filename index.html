@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link href="/css/tailwind.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Oswald:500"
+      rel="stylesheet" 
+    />-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="font-roboto">
+    <div id="header"></div>
+    <div id="carusel"></div>
+    <section class="my-9">
+      <div class="container">
+        <h1 class="text-2xl font-bold font-inter text-azul-medio">Tendencias Corona 2025</h1>
+        <p class="font-roboto text-lg text-azul-profundo">
+          Conoce nuestras cuatro casas inspiradas en las tendencias de diseño
+          Corona Design View 2025. Cada una de estas casas refleja un estilo
+          único, creado para tu personalidad y forma de vida. Te invitamos a
+          explorar estos diseños, que no solo embellecen los espacios, sino que
+          también cuentan historias y transmiten emociones. Desde la calidez del
+          estilo playero hasta la multiculturalidad del estilo étnico, cada
+          opción está pensada para que encuentres aquella que se alinee con tu
+          esencia.
+        </p>
+        <p class="font-roboto text-lg text-azul-profundo">
+          Atrévete a llevar estas tendencias en tu hogar y haz de tu espacio un
+          reflejo auténtico de quién eres. ¡Descubre cómo puedes reflejar tu
+          personalidad en cada espacio de tu hogar!
+        </p>
+      </div>
+    </section>
+    <section class="">
+      <div class="container flex">
+        <a class="px-12 py-8 flex flex-col gap-y-4 items-center flex-1" href="https://api.whatsapp.com/send?phone=573208406366" target="_blank">
+          <img class="w-12 h-12"
+            src="/img/icons/whatsapp.svg"
+            alt=""
+          />
+          <p class="font-inter text-lg font-bold text-center m-0 text-azul-medio border-b-2 border-azul-medio">Habla con nosotros</p>
+          <p class="font-roboto text-sm text-center m-0 text-azul-profundo">Chatea con nosotros a través de whatsapp</p>
+        </a>
+        <a class="px-12 py-8 flex flex-col gap-y-4 items-center flex-1" href="https://corona.co/guest/order" target="_blank">
+          <img class="w-12 h-12"
+            src="/img/icons/productos.svg"
+            alt=""
+          />
+          <p class="font-inter text-lg font-bold text-center m-0 text-azul-medio border-b-2 border-azul-medio">Estado de mi pedido</p>
+          <p class="font-roboto text-sm text-center m-0 text-azul-profundo">Ingresa y haz un seguimiento de tu pedido en tiempo real</p>
+        </a>
+        <a class="px-12 py-8 flex flex-col gap-y-4 items-center flex-1" href="https://corona.co/financiacion" target="_blank">
+          <img class="w-12 h-12"
+            src="/img/icons/productos.svg"
+            alt=""
+          />
+          <p class="font-inter text-lg font-bold text-center m-0 text-azul-medio border-b-2 border-azul-medio">Financiamiento</p>
+          <p class="font-roboto text-sm text-center m-0 text-azul-profundo">Conoce como financiar tu compra y disfruta de cómodos plazos de pago.</p>
+        </a>
+        <a class="px-12 py-8 flex flex-col gap-y-4 items-center flex-1" href="https://corona.co/productos/servicios/c/servicios" target="_blank">
+          <img class="w-12 h-12"
+            src="/img/icons/productos.svg"
+            alt=""
+          />
+          <p class="font-inter text-lg font-bold text-center m-0 text-azul-medio border-b-2 border-azul-medio">Nuestros servicios</p>
+          <p class="font-roboto text-sm text-center m-0 text-azul-profundo">Conoce nuestros servicios de instalación y asesoría</p>
+        </a>
+      </div>
+    </section>
+    <section class="py-14 bg-neutral-25">
+      <div class="container">
+        <!-- grid grid-cols-5 -->
+        <div class="flex flex-row gap-6">
+          <div class="flex-none">
+            <h2 class="font-inter mb-4 text-xl text-azul-medio">Habla con nosotros</h2>
+            <div class="flex flex-col gap-4">
+              <div class="font-roboto text-sm break-words text-azul-profundo">
+              Línea de Atención Nacional 018000 512 030
+              <br>
+              En Bogotá 404 88 84
+            </div>
+              <div class="font-roboto text-sm break-words text-azul-profundo">
+              Correo Atención al Cliente
+              <br>
+              contactenoscorona@corona.com.co
+            </div>
+              <div class="font-roboto text-sm break-words text-azul-profundo">
+              Línea Ética y Anticorrupción
+              <br>
+              lineaeticayanticorrupcion@corona.com.co
+            </div>
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/contacto" target="_blank">
+                Contáctenos
+              </a>
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/preguntas-frecuentes" target="_blank">
+                Preguntas Frecuentes
+              </a>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h2 class="font-inter mb-4 text-xl text-azul-medio">Legales</h2>
+            <div class="flex flex-col gap-4">
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/terminos-condiciones" target="_blank"
+              >Términos y Condiciones</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://prodcoronab2b.blob.core.windows.net/sys-master-product-media-container/products/documents/Tratamiento/GRC-PC-42%20Poli%CC%81tica%20Tratamiento%20de%20Datos%20Personales.pdf" target="_blank"
+              >Política de Tratamiento de Datos</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/terminos-condiciones#derecho-retracto" target="_blank"
+              >Derecho de Retracto</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://sic.gov.co/" target="_blank">Superintendencia de Industria y Comercio</a>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h2 class="font-inter mb-4 text-xl text-azul-medio">Proceso de compra</h2>
+            <div class="flex flex-col gap-4">
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/terminos-condiciones#devoluciones-cambios" target="_blank"
+              >Devoluciones y cambios</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/terminos-condiciones#envio-entrega" target="_blank"
+              >Costos de envío</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/terminos-condiciones#medios-condiciones-pago" target="_blank"
+              >Métodos de pago</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/tiendas-y-horarios" target="_blank">Mapa de tiendas</a>
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/garantias" target="_blank">Garantías</a>
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/garantia-suplementaria-pegacor-revestimientos" target="_blank">Solicita tu certificado de garantía suplementaria</a>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h2 class="font-inter mb-4 text-xl text-azul-medio">Enlaces destacados</h2>
+            <div class="flex flex-col gap-4">
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/catalogo?gad_source=1&gclid=Cj0KCQjwmOm3BhC8ARIsAOSbapWduPznSUYQ2PJ0FLQNPYZ_M6VpQlIz8ztdJV_30sfS4652Ir3X0GoaAqQtEALw_wcB" target="_blank"
+              >Catálogos</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/productos/revestimientos/pisos/c/pisos" target="_blank"
+              >Pisos</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/productos/sanitarios/c/sanitarios" target="_blank"
+              >Sanitarios</a
+              >
+              <a class="font-roboto text-sm break-words text-azul-profundo" href="https://corona.co/productos/pinturas/c/pinturas" target="_blank">Pinturas</a>
+            </div>
+          </div>
+          <div class="">
+            <div class="flex flex-row gap-4">
+              <a class="font-roboto text-sm" href="https://www.youtube.com/user/OrganizacionCorona" target="_blank">
+                <img src="/img/icons/youTube.svg" alt="">
+              </a>
+              <a class="font-roboto text-sm" href="https://www.facebook.com/coronamejoratuvida" target="_blank">
+                <img src="/img/icons/facebook.svg" alt="">
+              </a>
+              <a class="font-roboto text-sm" href="https://www.instagram.com/corona_inspira/
+              " target="_blank">
+                <img src="/img/icons/instagram.svg" alt="">
+              </a>
+              <a class="font-roboto text-sm" href="https://www.pinterest.es/coronainspira/" target="_blank">
+                <img src="/img/icons/pinterest.svg" alt="">
+              </a>
+            </div>
+          </div>
+          
+        </div>
+        
+        
+      </div>
+      </section>
+    <footer class="bg-azul-medio">
+      <div class="w-full mx-auto max-w-screen-xl p-4 flex justify-center">
+        <p class="m-0 text-white text-xs">© Copyright Corona - Todos los derechos reservados</p>
+      </div>
+    </footer>
+    <script>
+      /*<![CDATA[*/
+
+      var ACC = {
+        config: {},
+      };
+      var COC = {
+        config: {},
+      };
+    </script>
+    <script src="https://corona.co/_ui/shared/js/generatedVariables.js"></script>
+    <script src="https://corona.co/wro/all_responsive.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script> -->
+    <script src="src/carusel/carusel-script.js"></script>
+    <script type="module" src="/header.js"></script>
+    <script type="module" src="/carusel.js"></script>
+    <script type="module" src="/accordion.js"></script>
+    <script type="module" src="/counter.js"></script>
+    <script type="module" src="/gsap.js"></script>
+  </body>
+</html>
