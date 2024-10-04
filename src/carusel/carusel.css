@@ -13,6 +13,9 @@ section {
   height: 80vh; /* Ocupa toda la ventana */
   overflow: hidden; /* Evita el scroll dentro de la sección */
 }
+.swiper-vertical {
+  touch-action: auto!important;
+}
 
 .swiper-slide {
   display: flex;
