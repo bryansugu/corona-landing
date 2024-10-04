@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Corona - Tendencias</title>
   <link href="/css/tailwind.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://corona.co/wro/all_responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
@@ -56,14 +57,14 @@
 </style>
 </head>
 
-<body class="font-roboto">
+<body id="app" class="font-roboto">
      <!-- Overlay con el loader -->
      <div id="loader-overlay">
       <canvas id="riveCanvas" width="100px" height="100px"></canvas>
   </div>
   <div id="header"></div>
   <div id="carusel"></div>
-  <section class="my-9">
+  <section id="tendencias" class="my-9">
     <div class="container">
       <h1 class="text-2xl font-bold font-inter text-azul-medio">Tendencias Corona 2025</h1>
       <p class="font-roboto text-lg text-azul-profundo">
@@ -83,7 +84,7 @@
       </p>
     </div>
   </section>
-  <section class="">
+  <section id="contacto" class="">
     <div class="container">
       <div class="grid-cols-2 grid lg:flex">
         <a class="p-4 lg:px-12 lg:py-8 flex flex-col gap-y-4 items-center flex-1"
@@ -120,7 +121,7 @@
       </div>
     </div>
   </section>
-  <section class="lg:py-14 bg-neutral-25">
+  <section  id="accordion"  class="lg:py-14 bg-neutral-25">
     <div x-data="{ selectedAccordionItem: 'five' }"
       class="lg:hidden w-full divide-y divide-neutral-300 overflow-hidden rounded-md border border-neutral-300 bg-neutral-50/40 text-neutral-600">
       <div class="divide-y divide-neutral-300">
@@ -410,7 +411,7 @@
 
     </div>
   </section>
-  <footer class="bg-azul-medio">
+  <footer id="footer" class="bg-azul-medio">
     <div class="w-full mx-auto max-w-screen-xl p-4 flex justify-center">
       <p class="m-0 text-white text-xs">© Copyright Corona - Todos los derechos reservados</p>
     </div>
