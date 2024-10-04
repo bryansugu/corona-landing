@@ -1838,7 +1838,7 @@ document.querySelector('#header').innerHTML = `
                   </div>
                   <div class="coc-nav-icons">
                       <div class="header-icon account-icon-desktop hidden-xs hidden-sm">
-                          <a href="https://corona.co/login">
+                          <a href="https://corona.co/">
                               <div class="account-pre-text">
                                   <span class="coc-account-highlighted">
                                     Inicio</span>
