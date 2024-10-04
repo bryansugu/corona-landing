@@ -47,6 +47,11 @@
         opacity: 0;
         visibility: hidden;
     }
+    /* Ajuste de tamaño del canvas */
+    canvas {
+            width: 100px;
+            height: 100px;
+        }
 
 </style>
 </head>
@@ -454,6 +459,7 @@
            const riveAnimation = new rive.Rive({
                src: '/img/corona.riv', // Ruta de tu animación .riv
                canvas: riveCanvas,
+               useDevicePixelRatio: false,
                autoplay: true,
                stateMachines: "preloader",
                onLoad: () => {
