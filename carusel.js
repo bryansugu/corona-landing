@@ -9,7 +9,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(https://theyan.b-cdn.net/corona-landing/Portada-1.jpg);
+          background-image: url(/img/swiper/Portada-1.jpg);
         "
       >
         <!-- Overlay para oscurecer la imagen -->
@@ -33,7 +33,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(https://theyan.b-cdn.net/corona-landing/Casa%20playera.jpg);
+          background-image: url(/img/swiper/Casa%20playera.jpg);
         "
       >
         <div class="image-overlay"></div>
@@ -60,7 +60,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(https://theyan.b-cdn.net/corona-landing/casa%20campestre.jpg);
+          background-image: url(/img/swiper/casa%20campestre.jpg);
         "
       >
         <div class="image-overlay"></div>
@@ -86,7 +86,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(https://theyan.b-cdn.net/corona-landing/Casa%20Multicultural-1.jpg);
+          background-image: url(/img/swiper/Casa%20Multicultural-1.jpg);
         "
       >
         <div class="image-overlay"></div>
@@ -112,7 +112,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(https://theyan.b-cdn.net/corona-landing/Casa%20colorida-1.jpg);
+          background-image: url(/img/swiper/Casa%20colorida-1.jpg);
         "
       >
         <div class="image-overlay"></div>
