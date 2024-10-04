@@ -130,7 +130,7 @@ document.querySelector('#carusel').innerHTML = `
       </div>
       <div class="additional-content">
         <p class="subtitle">Tendencia 04</p>
-        <p class="bold-text"><strong>Surrealismo digita</strong></p>
+        <p class="bold-text"><strong>Surrealismo l</strong></p>
       </div>
     </div>
   </div>
