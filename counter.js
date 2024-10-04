@@ -6,7 +6,7 @@ class Slideshow {
 
     this.config = {
       slideshow: {
-        delay: 5500, // 5.5 segundos de duración total por diapositiva
+        delay: 8500, // 5.5 segundos de duración total por diapositiva
         pagination: {
           duration: 5.5, // Duración de la barra de progreso sincronizada con la diapositiva
         },
@@ -22,7 +22,7 @@ class Slideshow {
 
     // Set the slider
     this.slideshow = new Swiper(this.DOM.el, {
-      direction: "vertical",
+      direction: "horizontal",
       loop: true,
       allowTouchMove: false,
       autoplay: {
@@ -162,7 +162,7 @@ class Slideshow {
 
       // Desaparecer el contenido a los 3.5 segundos
       gsap.to(this.DOM.activeSlideContent, {
-        delay: 3.5, // Desaparecer después de 3.5 segundos
+        delay: 7.5, // Desaparecer después de 3.5 segundos
         duration: 0.5, // Duración de la animación de salida
         ease: "power2.in",
         opacity: 0,   // Desvanecer el contenido
