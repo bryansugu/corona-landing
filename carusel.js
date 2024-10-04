@@ -9,7 +9,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(https://theyan.b-cdn.net/corona-landing/Portada.jpg);
+          background-image: url(https://theyan.b-cdn.net/corona-landing/Portada-1.jpg);
         "
       >
         <!-- Overlay para oscurecer la imagen -->
@@ -33,7 +33,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(https://theyan.b-cdn.net/corona-landing/Casa%20playera-1.jpg);
+          background-image: url(https://theyan.b-cdn.net/corona-landing/Casa%20playera.jpg);
         "
       >
         <div class="image-overlay"></div>
@@ -45,7 +45,7 @@ document.querySelector('#carusel').innerHTML = `
         </span>
         <!-- <span class="slide-title">Meet ocean</span> -->
         <p class="slide-description">
-        ¿Amas la playa?  Tu casa puede sentirse como una.
+        ¿Amas la playa? Tu casa puede sentirse como una.
         </p>
         <button class="slide-button">VER LA CASA</button>
       </div>

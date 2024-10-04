@@ -24,6 +24,7 @@ class Slideshow {
     this.slideshow = new Swiper(this.DOM.el, {
       direction: "vertical",
       loop: true,
+      allowTouchMove: false,
       autoplay: {
         delay: this.config.slideshow.delay, // 5.5 segundos de duración por slide
         disableOnInteraction: false,
