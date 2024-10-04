@@ -24,9 +24,38 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* Overlay que cubre toda la pantalla */
+    #loader-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Asegura que esté por encima de todo */
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Cuando el overlay se esconde */
+    #loader-overlay.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+</style>
 </head>
 
 <body class="font-roboto">
+     <!-- Overlay con el loader -->
+     <div id="loader-overlay">
+      <canvas id="riveCanvas"></canvas>
+  </div>
   <div id="header"></div>
   <div id="carusel"></div>
   <section class="my-9">
@@ -407,6 +436,47 @@
   <script type="module" src="/accordion.js"></script>
   <script type="module" src="/counter.js"></script>
   <script type="module" src="/gsap.js"></script>
+   <!-- Cargar Rive desde el CDN -->
+   <script src="https://unpkg.com/@rive-app/canvas@2.17.3"></script>
+   <script>
+       document.addEventListener("DOMContentLoaded", () => {
+           const riveCanvas = document.getElementById('riveCanvas');
+           const loaderOverlay = document.getElementById('loader-overlay');
+           let minimumDurationReached = false;
+           
+           // Establecer un tiempo mínimo de 3 segundos para la animación
+           const minimumDuration = 3300; // 3 segundos
+           setTimeout(() => {
+               minimumDurationReached = true;
+           }, minimumDuration);
+
+           // Cargar la animación de Rive
+           const riveAnimation = new rive.Rive({
+               src: '/img/corona.riv', // Ruta de tu animación .riv
+               canvas: riveCanvas,
+               autoplay: true,
+               stateMachines: "preloader",
+               onLoad: () => {
+                   riveAnimation.resizeDrawingSurfaceToCanvas(); // Ajusta el canvas
+               }
+           });
+
+           // Ocultar el loader cuando la página esté lista
+           window.onload = function() {
+               const hideLoader = () => {
+                   if (minimumDurationReached) {
+                       loaderOverlay.classList.add('hidden'); // Esconde el overlay
+                   } else {
+                       // Esperar hasta que pase el mínimo de duración
+                       setTimeout(hideLoader, minimumDuration - (Date.now() - startTime));
+                   }
+               };
+
+               const startTime = Date.now();
+               hideLoader();
+           };
+       });
+   </script>
 </body>
 
 </html>
