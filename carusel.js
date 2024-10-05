@@ -9,7 +9,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(/img/swiper/Portada-1.jpg);
+          background-image: url(/img/swiper/Casas-que_gritan_tendencia.png);
         "
       >
         <!-- Overlay para oscurecer la imagen -->
@@ -33,7 +33,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(/img/swiper/Casa%20playera.jpg);
+          background-image: url(/img/swiper/Casa_playera.jpg);
         "
       >
         <div class="image-overlay"></div>
@@ -47,7 +47,7 @@ document.querySelector('#carusel').innerHTML = `
         <p class="slide-description">
         ¿Amas la playa? Tu casa puede sentirse como una.
         </p>
-        <button class="slide-button">VER LA CASA</button>
+        <a class="slide-button" href="https://corona.co/ambientes-tendencias/casa-playera">VER LA CASA</a>
       </div>
       <div class="additional-content">
         <p class="subtitle">Tendencia 01</p>
@@ -60,7 +60,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(/img/swiper/casa%20campestre.jpg);
+          background-image: url(/img/swiper/Casa_campestre.jpg);
         "
       >
         <div class="image-overlay"></div>
@@ -74,7 +74,7 @@ document.querySelector('#carusel').innerHTML = `
         <p class="slide-description">
         ¿Te gusta la sensación acogedora de una cabaña? Tu casa puede sentirse así.
         </p>
-        <button class="slide-button">VER LA CASA</button>
+        <a class="slide-button" href="https://corona.co/ambientes-tendencias/casa-campestre">VER LA CASA</a>
       </div>
       <div class="additional-content">
         <p class="subtitle">Tendencia 02</p>
@@ -86,7 +86,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(/img/swiper/Casa%20Multicultural-1.jpg);
+          background-image: url(/img/swiper/Casa_multicultural.png);
         "
       >
         <div class="image-overlay"></div>
@@ -100,7 +100,7 @@ document.querySelector('#carusel').innerHTML = `
         <p class="slide-description">
         ¿Eres amante de las culturas del mundo y los viajes? Tu casa puede sentirse como uno.
         </p>
-        <button class="slide-button">VER LA CASA</button>
+        <a class="slide-button" href="https://corona.co/ambientes-tendencias/casa-multicultural">VER LA CASA</a>
       </div>
       <div class="additional-content">
         <p class="subtitle">Tendencia 03</p>
@@ -112,7 +112,7 @@ document.querySelector('#carusel').innerHTML = `
       <div
         class="slide-image"
         style="
-          background-image: url(/img/swiper/Casa%20colorida-1.jpg);
+          background-image: url(/img/swiper/Casa_colorida.jpg);
         "
       >
         <div class="image-overlay"></div>
@@ -126,7 +126,7 @@ document.querySelector('#carusel').innerHTML = `
         <p class="slide-description">
         ¿Eres extrovertido y te gustan los espacios coloridos? Tu casa puede expresar eso.
         </p>
-        <button class="slide-button">VER LA CASA</button>
+        <a class="slide-button" href="https://corona.co/ambientes-tendencias/casa-colorida">VER LA CASA</a>
       </div>
       <div class="additional-content">
         <p class="subtitle">Tendencia 04</p>
