@@ -44,7 +44,7 @@ class Slideshow {
         modifierClass: "slideshow-pagination-",
         renderBullet: function (index, className) {
           var slideIndex = index,
-            number = index <= 8 ? "0" + (slideIndex + 1) : slideIndex + 1;
+            number = index <= 8 ? "0" + slideIndex : slideIndex;
 
           var paginationItem = '<span class="slideshow-pagination-item">';
           paginationItem += '<span class="pagination-number">' + number + "</span>";
