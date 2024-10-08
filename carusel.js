@@ -1,152 +1,214 @@
 import './src/carusel/carusel.css';
+console.log("WASAAAAAA")
+// The Slideshow class.
+class Slideshow {
+  constructor(el) {
+    this.DOM = { el: el };
 
-document.querySelector('#carusel').innerHTML = `
-<section>
-<div class="swiper-container slideshow">
-  <div class="swiper-wrapper">
-    <!-- Diapositiva 1 -->
-    <div class="swiper-slide slide">
-      <div
-        class="slide-image"
-        style="
-          background-image: url(/img/swiper/Casas-que_gritan_tendencia.png);
-        "
-      >
-        <!-- Overlay para oscurecer la imagen -->
-        <div class="image-overlay"></div>
-      </div>
+    this.config = {
+      slideshow: {
+        delay: 8500, // Duración total por diapositiva
+        pagination: {
+          duration: 8.5, // Duración de la barra de progreso sincronizada con el tiempo de la diapositiva
+        },
+      },
+    };
 
-      <!-- Contenedor del contenido -->
-      <div class="slide-content">
-        <span class="slide-title">
-        Casas <br> que <span class="bold-highlight">gritan</span> <span class="bold-highlight">tendencia</span>
-        </span>
-        <!-- <span class="slide-title">Exotic places</span> -->
-        <p class="slide-description">
-        Inspírate con nuestras cuatro casas y conoce las tendencias de diseño 2025
-        </p>
-      </div>
-    </div>
+    // Inicializamos el slideshow
+    this.init();
+  }
 
-    <!-- Diapositiva 2 -->
-    <div class="swiper-slide slide">
-      <div
-        class="slide-image"
-        style="
-          background-image: url(/img/swiper/Casa_playera.jpg);
-        "
-      >
-        <div class="image-overlay"></div>
-      </div>
+  init() {
+    var self = this;
 
-      <div class="slide-content">
-        <span class="slide-title">
-          Casa <br> <span class="bold-highlight">playera</span>
-        </span>
-        <!-- <span class="slide-title">Meet ocean</span> -->
-        <p class="slide-description">
-        ¿Amas la playa? Tu casa puede sentirse como una.
-        </p>
-        <a class="slide-button" href="https://corona.co/ambientes-tendencias/casa-playera">VER LA CASA</a>
-      </div>
-      <div class="additional-content">
-        <p class="subtitle">Tendencia 01</p>
-        <p class="bold-text"><strong>Brisa costera</strong></p>
-      </div>
-    </div>
+    // Set the slider
+    this.slideshow = new Swiper(this.DOM.el, {
+      direction: "horizontal",
+      loop: true,
+      allowTouchMove: false,
+      autoplay: {
+        delay: this.config.slideshow.delay,
+        disableOnInteraction: false,
+      },
+      speed: 500,
+      preloadImages: true,
+      updateOnImagesReady: true,
 
-    <!-- Diapositiva 3 -->
-    <div class="swiper-slide slide">
-      <div
-        class="slide-image"
-        style="
-          background-image: url(/img/swiper/Casa_campestre.jpg);
-        "
-      >
-        <div class="image-overlay"></div>
-      </div>
+      pagination: {
+        el: ".slideshow-pagination",
+        clickable: true,
+        bulletClass: "slideshow-pagination-item",
+        bulletActiveClass: "active",
+        clickableClass: "slideshow-pagination-clickable",
+        modifierClass: "slideshow-pagination-",
+        renderBullet: function (index, className) {
+          var slideIndex = index,
+            number = index <= 8 ? "0" + (slideIndex + 1) : slideIndex + 1;
 
-      <div class="slide-content">
-        <span class="slide-title">
-          Casa <span class="bold-highlight">Campestre</span>
-        </span>
-        <!-- <span class="slide-title">Around the world</span> -->
-        <p class="slide-description">
-        ¿Te gusta la sensación acogedora de una cabaña? Tu casa puede sentirse así.
-        </p>
-        <a class="slide-button" href="https://corona.co/ambientes-tendencias/casa-campestre">VER LA CASA</a>
-      </div>
-      <div class="additional-content">
-        <p class="subtitle">Tendencia 02</p>
-        <p class="bold-text"><strong>Encanto campestre</strong></p>
-      </div>
-    </div>
-    <!-- Diapositiva 3 -->
-    <div class="swiper-slide slide">
-      <div
-        class="slide-image"
-        style="
-          background-image: url(/img/swiper/Casa_multicultural.png);
-        "
-      >
-        <div class="image-overlay"></div>
-      </div>
+          var paginationItem = '<span class="slideshow-pagination-item">';
+          paginationItem += '<span class="pagination-number">' + number + "</span>";
+          paginationItem = index <= 8
+            ? paginationItem + '<span class="pagination-separator"><span class="pagination-separator-loader"></span></span>'
+            : paginationItem;
+          paginationItem += "</span>";
 
-      <div class="slide-content">
-        <span class="slide-title">
-          Casa <span class="bold-highlight">Multicultural</span>
-        </span>
-        <!-- <span class="slide-title">Around the world</span> -->
-        <p class="slide-description">
-        ¿Eres amante de las culturas del mundo y los viajes? Tu casa puede sentirse como uno.
-        </p>
-        <a class="slide-button" href="https://corona.co/ambientes-tendencias/casa-multicultural">VER LA CASA</a>
-      </div>
-      <div class="additional-content">
-        <p class="subtitle">Tendencia 03</p>
-        <p class="bold-text"><strong>Manifiesto ancestral</strong></p>
-      </div>
-    </div>
-    <!-- Diapositiva 4 -->
-    <div class="swiper-slide slide">
-      <div
-        class="slide-image"
-        style="
-          background-image: url(/img/swiper/Casa_colorida.jpg);
-        "
-      >
-        <div class="image-overlay"></div>
-      </div>
+          return paginationItem;
+        },
+      },
 
-      <div class="slide-content">
-        <span class="slide-title">
-          Casa <span class="bold-highlight">Colorida</span>
-        </span>
-        <!-- <span class="slide-title">Around the world</span> -->
-        <p class="slide-description">
-        ¿Eres extrovertido y te gustan los espacios coloridos? Tu casa puede expresar eso.
-        </p>
-        <a class="slide-button" href="https://corona.co/ambientes-tendencias/casa-colorida">VER LA CASA</a>
-      </div>
-      <div class="additional-content">
-        <p class="subtitle">Tendencia 04</p>
-        <p class="bold-text"><strong>Surrealismo l</strong></p>
-      </div>
-    </div>
-  </div>
+      navigation: {
+        nextEl: ".slideshow-navigation-button.next",
+        prevEl: ".slideshow-navigation-button.prev",
+      },
 
-  <!-- Paginación -->
-  <div class="slideshow-pagination"></div>
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
 
-  <!-- Botones de navegación -->
-  <div class="slideshow-navigation">
-    <div class="slideshow-navigation-button prev">
-      <span class="fas fa-chevron-left"></span>
-    </div>
-    <div class="slideshow-navigation-button next">
-      <span class="fas fa-chevron-right"></span>
-    </div>
-  </div>
-</div>
-</section>
-`;
+      on: {
+        init: function () {
+          self.animateSlide(); 
+          self.animatePagination(); 
+        },
+        slideChangeTransitionStart: function () {
+          self.resetPagination(); 
+          self.stopPaginationAnimation(); // Asegura que la animación se detenga antes de reiniciar
+        },
+        slideChangeTransitionEnd: function () {
+          self.animateSlide(); 
+          self.animatePagination(); 
+        },
+      },
+    });
+
+    // Init events for buttons and paginations.
+    this.initNavigationButtons();
+    this.initPaginationClicks();
+  }
+
+  initNavigationButtons() {
+    const self = this;
+
+    document.querySelector('.slideshow-navigation-button.next').addEventListener('click', function (e) {
+      e.preventDefault();
+      self.resetPagination(); 
+      setTimeout(function () {
+        self.slideshow.slideNext(); 
+      }, 500);
+    });
+
+    document.querySelector('.slideshow-navigation-button.prev').addEventListener('click', function (e) {
+      e.preventDefault();
+      self.resetPagination(); 
+      setTimeout(function () {
+        self.slideshow.slidePrev(); 
+      }, 500);
+    });
+  }
+
+  initPaginationClicks() {
+    const self = this;
+    document.querySelectorAll('.slideshow-pagination-item').forEach(item => {
+      item.addEventListener('click', function (e) {
+        self.resetPagination(); 
+      });
+    });
+  }
+
+  waitForImageLoad(element, callback) {
+    const img = new Image();
+    const backgroundImage = window.getComputedStyle(element).backgroundImage;
+
+    if (backgroundImage !== 'none') {
+      const imageUrl = backgroundImage.slice(5, -2);
+      img.src = imageUrl;
+
+      img.onload = function () {
+        callback();
+      };
+    } else {
+      callback();
+    }
+  }
+
+  animateSlide() {
+    this.DOM.activeSlide = this.DOM.el.querySelector(".swiper-slide-active");
+    this.DOM.activeSlideContent = this.DOM.activeSlide.querySelector(".slide-content");
+    this.DOM.activeSlideAdditionalContent = this.DOM.activeSlide.querySelector(".additional-content");
+    const slideImage = this.DOM.activeSlide.querySelector(".slide-image");
+
+    const allContents = this.DOM.el.querySelectorAll(".slide-content");
+    allContents.forEach((content) => {
+      gsap.set(content, { opacity: 0, x: "-100%" });
+    });
+
+    const allAdditionalContents = this.DOM.el.querySelectorAll(".additional-content");
+    allAdditionalContents.forEach((content) => {
+      gsap.set(content, { opacity: 0, x: "-100%" });
+    });
+
+    const allBoldHighlights = this.DOM.activeSlide.querySelectorAll(".bold-highlight");
+    allBoldHighlights.forEach((highlight) => {
+      gsap.set(highlight, { opacity: 1 });
+      highlight.classList.remove("animate");
+    });
+
+    this.waitForImageLoad(slideImage, () => {
+      // Animar tanto slide-content como additional-content al mismo tiempo
+      gsap.fromTo([this.DOM.activeSlideContent, this.DOM.activeSlideAdditionalContent], 
+        { opacity: 0, x: "-100%" },
+        { opacity: 1, x: "0%", duration: 0.5, ease: "power2.out" }
+      );
+
+      gsap.to([this.DOM.activeSlideContent, this.DOM.activeSlideAdditionalContent], {
+        delay: 7.5,
+        duration: 0.5,
+        ease: "power2.in",
+        opacity: 0,
+        x: "100%",    
+        onStart: function () {
+          console.log('Contenido desapareciendo después de 7.5 segundos');
+        }
+      });
+
+      allBoldHighlights.forEach((highlight) => {
+        setTimeout(() => {
+          highlight.classList.add("animate");
+        }, 1000);
+      });
+    });
+  }
+
+  animatePagination() {
+    const allLoaders = document.querySelectorAll('.pagination-separator-loader');
+    const activeBullet = document.querySelector('.slideshow-pagination-item.active .pagination-separator-loader');
+
+    allLoaders.forEach(loader => {
+      gsap.set(loader, { scaleX: 0 });
+    });
+
+    if (activeBullet) {
+      gsap.to(activeBullet, {
+        duration: this.config.slideshow.pagination.duration,
+        scaleX: 1,
+        ease: 'linear',
+      });
+    }
+  }
+
+  stopPaginationAnimation() {
+    const allLoaders = document.querySelectorAll('.pagination-separator-loader');
+    allLoaders.forEach(loader => {
+      gsap.killTweensOf(loader); // Detiene la animación activa en las barras de progreso
+    });
+  }
+
+  resetPagination() {
+    const allLoaders = document.querySelectorAll('.pagination-separator-loader');
+    allLoaders.forEach(loader => {
+      gsap.set(loader, { scaleX: 0 });
+    });
+  }
+}
+
+const slideshow = new Slideshow(document.querySelector(".slideshow"));
