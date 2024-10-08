@@ -1,0 +1,327 @@
+html, body {
+  height: 100%; /* Asegura que el body y html ocupen toda la altura del viewport */
+  overflow: auto;
+}
+
+section {
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.swiper-container {
+  width: 100%;
+  height: 80vh; /* Ocupa toda la ventana */
+  overflow: hidden; /* Evita el scroll dentro de la sección */
+}
+.swiper-vertical {
+  touch-action: auto!important;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  justify-content: flex-start;
+  /* justify-content: center; */
+  align-items: center;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.slide-image {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: calc(100% + 400px);
+  height: calc(100% + 400px);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+/* Overlay oscuro para la imagen */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Oscurecer la imagen */
+  z-index: 2;
+}
+
+/* Estilos para el título */
+.slide-title {
+  /* font-size: 4rem; */
+  font-size: clamp(2rem, 2.5rem + 1.3889vw, 3.75rem);;
+  line-height: 1.2;
+  font-family: "Roboto", sans-serif;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0; /* Quita márgenes adicionales del párrafo */
+}
+
+/* Estilos para el texto en negrita */
+.bold-highlight {
+  font-weight: bold;
+  position: relative; /* Necesario para el pseudo-elemento */
+  z-index: 1; /* Asegura que el texto esté por encima del pseudo-elemento */
+  color: #FFF; /* Color del texto */
+  display: inline-block; /* Para ajustar el tamaño del recuadro solo al texto */
+}
+
+/* Pseudo-elemento para el recuadro de fondo */
+.bold-highlight::before {
+  content: "";
+  position: absolute;
+  left: -5px; /* Expandir 10px a la izquierda */
+  right: -5px; /* Expandir 10px a la derecha */
+  top: -5px; /* Expandir 10px hacia arriba */
+  bottom: -5px; /* Expandir 10px hacia abajo */
+  background-color: #333333; /* Color del recuadro */
+  z-index: -1; /* Debajo del texto */
+  width: 0; /* Comienza invisible */
+  transition: width 0.5s ease-in-out, left 0.5s ease-in-out, right 0.5s ease-in-out; /* Transición */
+}
+
+/* Clase de animación para el recuadro */
+.bold-highlight.animate::before {
+  left: -5px;
+  right: -5px;
+  width: calc(100% + 10px); /* El recuadro crece 10px a cada lado */
+}
+
+
+
+
+@media (min-width: 1440px) {
+  .slide-title {
+    font-size: clamp(2rem, 2.5rem + 1.3889vw, 3.75rem);;
+    max-width: none;
+  }
+}
+
+.slide-title span {
+  white-space: pre;
+  display: inline-block;
+  opacity: 1;
+}
+
+.slideshow {
+  position: relative;
+}
+
+/* El contenedor que incluye el título, descripción y botón */
+.slide-content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-align: left;
+  padding: 48px;
+  max-width: 530px;
+  opacity: 0; /* Oculto inicialmente para aplicar la animación */
+  transform: translateX(-100%); /* Inicia fuera de la pantalla */
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.slide-description {
+  margin-bottom: 20px;
+  margin-top: 24px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.slide-button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 16px 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.slide-button:hover {
+  background-color: #ddd;
+}
+
+.slideshow-pagination {
+  position: absolute;
+  top: 48px; /* Ajusta este valor si quieres más o menos espacio desde la parte superior */
+  left: 48px; /* Ajusta este valor si quieres más o menos espacio desde la izquierda */
+  display: flex;
+  justify-content: flex-start; /* Mantiene los elementos alineados a la izquierda */
+  align-items: center;
+  transition: 0.3s opacity;
+  z-index: 10;
+}
+
+
+.slideshow-pagination-item {
+  display: flex;
+  align-items: center;
+}
+
+.slideshow-pagination-item .pagination-number {
+  opacity: 0.5;
+}
+
+.slideshow-pagination-item:hover,
+.slideshow-pagination-item:focus {
+  cursor: pointer;
+}
+
+.slideshow-pagination-item:last-of-type .pagination-separator {
+  width: 0;
+}
+
+.slideshow-pagination-item.active .pagination-number {
+  opacity: 1;
+}
+
+.slideshow-pagination-item.active .pagination-separator {
+  width: 10vw;
+}
+
+.slideshow-navigation{
+    position: absolute;
+    bottom: 48px;
+    right: 48px;
+    display: flex;
+    column-gap: 24px;
+}
+/* Botones de navegación next y prev */
+.slideshow-navigation-button {
+      /* position: absolute; */
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* width: 40px; */
+      height: 60px;
+      z-index: 90;
+      aspect-ratio: 1 / 1;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #FFF;
+      color: #000000;
+      transition: all 0.3s ease;
+}
+
+.slideshow-navigation-button:hover,
+.slideshow-navigation-button:focus {
+  cursor: pointer;
+  background-color: #ddd; /* Cambiamos el fondo al hacer hover */
+}
+
+.slideshow-navigation-button.prev {
+  right: 70px; /* Botón prev ligeramente más a la izquierda que next */
+}
+
+.slideshow-navigation-button.next {
+  right: 20px; /* Botón next en la esquina */
+}
+
+
+.pagination-number {
+  font-size: 1.8rem;
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  padding: 0 0.5rem;
+}
+
+.pagination-separator {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 1440px) {
+  .pagination-separator {
+    display: block;
+  }
+}
+
+.pagination-separator-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  transform-origin: 0 0;
+}
+
+/* Estilo para el contenedor del contenido adicional */
+.additional-content {
+  position: absolute;
+  text-align: left;
+  bottom: 48px; /* Posiciona en la parte inferior */
+  left: 48px;  /* Alinea hacia la izquierda */
+  color: white; /* Color del texto */
+  z-index: 10;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.bold-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+
+/* Dispositivos muy pequeños (teléfonos verticales, menos de 576px) */
+@media (max-width: 575.98px) {
+  /* Estilos para teléfonos móviles */
+  .slideshow-pagination{
+    top: 24px;
+    left: 24px;
+  }
+  .pagination-number{
+    font-size: 20px;
+  }
+  .slide-content{
+    padding: 24px;
+  }
+  .slideshow-navigation{
+    bottom: 24px;
+    right: 24px;
+  }
+  .slideshow-navigation-button{
+    padding: 16px;
+    height: auto;
+    column-gap: 12px;
+  }
+  .slide-description{
+    font-size: 20px;
+  }
+  .additional-content{
+    left: 24px;
+    bottom: 90px;
+  }
+  .additional-content{
+    display: none;
+  }
+}
