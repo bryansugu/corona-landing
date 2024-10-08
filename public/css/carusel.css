@@ -278,6 +278,9 @@ section {
   left: 48px;  /* Alinea hacia la izquierda */
   color: white; /* Color del texto */
   z-index: 10;
+  opacity: 0; /* Oculto inicialmente para aplicar la animación */
+  transform: translateX(-100%); /* Inicia fuera de la pantalla */
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
 }
 
 .subtitle {

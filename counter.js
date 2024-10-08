@@ -159,10 +159,10 @@ class Slideshow {
       gsap.set(content, { opacity: 0, x: "-100%" });
     });
 
-    const allAdditionalContents = this.DOM.el.querySelectorAll(".additional-content");
-    allAdditionalContents.forEach((content) => {
-      gsap.set(content, { opacity: 0, x: "-100%" });
-    });
+    // const allAdditionalContents = this.DOM.el.querySelectorAll(".additional-content");
+    // allAdditionalContents.forEach((content) => {
+    //   gsap.set(content, { opacity: 0, x: "-100%" });
+    // });
 
     const allBoldHighlights = this.DOM.activeSlide.querySelectorAll(".bold-highlight");
     allBoldHighlights.forEach((highlight) => {
