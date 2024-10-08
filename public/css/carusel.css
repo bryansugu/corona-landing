@@ -330,3 +330,11 @@ section {
         left: 24px!important;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .multicultural{
+
+ font-size: 10vw; /* Ajusta el valor según el tamaño de tu contenedor */
+ white-space: nowrap;
+}
+}
