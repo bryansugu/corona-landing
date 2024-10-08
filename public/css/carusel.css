@@ -325,6 +325,8 @@ section {
     bottom: 90px;
   }
   .additional-content{
-    display: none;
+    /* display: none; */
+    bottom: 24px!important;
+        left: 24px!important;
   }
 }

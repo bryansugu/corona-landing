@@ -214,7 +214,7 @@ section {
       align-items: center;
       /* width: 40px; */
       height: 60px;
-      z-index: 1000;
+      z-index: 90!important;
       aspect-ratio: 1 / 1;
       padding: 20px;
       border-radius: 8px;
@@ -278,6 +278,9 @@ section {
   left: 48px;  /* Alinea hacia la izquierda */
   color: white; /* Color del texto */
   z-index: 10;
+  opacity: 0; /* Oculto inicialmente para aplicar la animación */
+  transform: translateX(-100%); /* Inicia fuera de la pantalla */
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
 }
 
 .subtitle {
@@ -320,5 +323,10 @@ section {
   .additional-content{
     left: 24px;
     bottom: 90px;
+  }
+  .additional-content{
+    /* display: none; */
+    bottom: 24px!important;
+        left: 24px!important;
   }
 }
