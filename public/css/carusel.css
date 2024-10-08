@@ -214,7 +214,7 @@ section {
       align-items: center;
       /* width: 40px; */
       height: 60px;
-      z-index: 90;
+      z-index: 90!important;
       aspect-ratio: 1 / 1;
       padding: 20px;
       border-radius: 8px;
